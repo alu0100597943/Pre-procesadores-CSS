@@ -1,4 +1,3 @@
-
 /*Archivo SCSS con  Funciones Border-radius y Box-shadow*/
 
 
@@ -45,9 +44,16 @@
 
 /* Funcion BOX-SHADOW */
 
-
+/* Externo */
 @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
   -moz-box-shadow: $horizontal, $vertical, $blur, $spread, $color;
   -webkit-box-shadow: $horizontal, $vertical, $blur, $spread, $color;
   box-shadow:$horizontal, $vertical, $blur, $spread, $color;
+}
+
+/* Interno */
+@mixin box-shadow-inset($horizontal, $vertical, $blur, $spread, $color) {
+  -moz-box-shadow: inset $horizontal, $vertical, $blur, $spread, $color;
+  -webkit-box-shadow:inset $horizontal, $vertical, $blur, $spread, $color;
+  box-shadow: inset $horizontal, $vertical, $blur, $spread, $color;
 }
