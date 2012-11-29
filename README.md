@@ -5,6 +5,13 @@ Un pre-procesador CSS es un lenguaje que extiende CSS y nos permite utilizar fun
 
 Este repositorio está destinado a conocer un poco más de los preprocesadores CSS,  este repositorio explicara los siguientes preprocesadores: SASS, LESS.
 
+## Estilos de los documentos
+    
+    Todas las variables estaran escritas "$hola_separador", es decir, se separan con espacio
+    Las funciones (mixins) se escriben "border-radius"
+    Para la indentacion se usa la tabulacion a 2 espacios.
+    Solo se usaran caracteres basicos a-z, A-Z,0-9, -, _. Y no caracateres especiales (incluso en los comentarios).
+
 ## Colaboradores
 
   - Sergio Marin [@highercomve](https://github.com/highercomve)
