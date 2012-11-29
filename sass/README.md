@@ -188,15 +188,15 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
 ```sass
 
     @for $i from $variable numero through $variable {
-      .propiedad #{$i}: valor
+      .propiedad#{$i}: valor;
     }
 
     @if $variable == parametro {      
-      .propiedad: valor
+      .propiedad: valor;
     } @else if $variable == parametro {
-      .propiedad: $variable
+      .propiedad: $variable;
     } @else {
-      .propiedad: valor
+      .propiedad: valor;
     }
 
 ```
