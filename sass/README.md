@@ -183,3 +183,33 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
     transition: height 500ms ease;
   }
 ```
+## Ciclos y Control de flujo en Sass
+
+```sass
+
+    @for $i from $variable numero through $variable {
+      .propiedad #{$i}: valor
+    }
+
+    @if $variable == parametro {      
+      .propiedad: valor
+    } @else if $variable == parametro {
+      .propiedad: $variable
+    } @else {
+      .propiedad: valor
+    }
+
+```
+### Ejemplo en Sass
+
+```sass
+
+
+```
+### Salida en CSS
+
+```css
+
+
+```
+
