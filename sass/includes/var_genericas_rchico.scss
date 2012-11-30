@@ -1,0 +1,50 @@
+// Variables  Utilizadas en las distintas parates del site o la aplicacion
+
+
+//Familia de fuentes tipograficas Google Web Font
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Chivo:400,400italic);
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,500,600);
+
+$fuente-open:'Open Sans', sans-serif;
+$fuente-chivo:'Chivo', sans-serif;
+$fuente-ubuntu:'Ubuntu', sans-serif;
+$fuente-dosis:'Dosis', sans-serif;
+
+//Pantones de colores 
+
+$gris:#666666;
+$gris-oscuro: darken($gris,50%);
+$gris-claro: lighten($gris, 50%);
+
+$azul:#0061FF;
+$azul-oscuro: darken($azul,20%);
+$azul-claro: lighten($azul,20%);
+
+$naranja:#FF3400;
+$naranja-oscuro: darken($naranja,30%);
+$naranja-claro: lighten($naranja,30%);
+
+$rojo:#F32424;
+$rojo-oscuro: darken($rojo,10%);
+$rojo-claro: lighten($rojo,20%);
+
+
+// Colores de Fuentes
+
+$color-fondo:#ffffff;
+$color-fuente-ppal:#333;
+$color-fuente-secu:#FF4F00;
+$color-fuente:#0088FF;
+
+
+// Colores de Bordes, Enlaces y Modulos
+
+$color-bordes:#0058FF;
+$color-enlace:#0077FF
+$color-caja:#999999;
+
+
+
