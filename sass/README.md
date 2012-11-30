@@ -159,9 +159,9 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   .caja {
     heigth: $alto;
     width: $ancho;
+    @include transicion(height,500ms,ease)
     &:hover {
       height: $alto * 2;
-      @include (height,500ms,ease)
     }
   }
 ```
@@ -172,15 +172,15 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   .caja{
     height: 100px
     width: 200px
-    }
-
-  .caja:hover{
-    height: 200px;
     -webkit-transition: height 500ms ease;
     -moz-transition: height 500ms ease;
     -ms-transition: height 500ms ease;
     -o-transition: height 500ms ease;
     transition: height 500ms ease;
+    }
+
+  .caja:hover{
+    height: 200px;
   }
 ```
 ## Ciclos y Control de flujo en Sass
