@@ -1,10 +1,56 @@
-// text shadow hacia afuera y hacia dentro outline
+/*Archivo scss de las siguientes funciones 
+gradientes - transiciones - transformaciones */
 
-@mixin text-shadow ($vertical,$horizontal,$blur,$color){
-	text-shadow: $vertical $horizontal $blur $color;
-    filter: dropshadow(color=$color, offx=$horizontal, offy=$vertical);
+@mixin gradiente($color_ini, $color_final) {
+  background: -webkit-linear-gradient($color_ini, $color_final);
+  background: -moz-linear-gradient($color_ini, $color_final);
+  background: -o-linear-gradient($color_ini, $color_final);
+  background: linear-gradient($color_ini, $color_final);
 }
 
-@mixin outline ($ancho , $tipo , $color){
-	outline: $ancho $tipo $color;
+/* indicar el tiempo en milisegundos*/
+@mixin transicion($tipo, $tiempo, $funcion) {
+  -webkit-transition: $tipo $tiempo $funcion;
+  -moz-transition: $tipo $tiempo $funcion;
+  -ms-transition: $tipo $tiempo $funcion;
+  -o-transition: $tipo $tiempo $funcion;
+  transition: $tipo $tiempo $funcion;
+}
+
+@mixin transformacion($escala, $rotacion, $trasladoEjeX, $trasladoEjeY, $giroEjeX, $giroEjeY) {
+  -moz-transform: scale($escala) rotate(#{$rotacion}deg) translateX(#{$trasladoEjeX}px) translateY(#{$trasladoEjeY}px) skewX(#{$giroEjeX}deg) skewY(#{$giroEjeY}deg);
+  -webkit-transform: scale($escala) rotate(#{$rotacion}deg) translateX(#{$trasladoEjeX}px) translateY(#{$trasladoEjeY}px) skewX(#{$giroEjeX}deg) skewY(#{$giroEjeY}deg);
+  -o-transform: scale($escala) rotate(#{$rotacion}deg) translateX(#{$trasladoEjeX}px) translateY(#{$trasladoEjeY}px) skewX(#{$giroEjeX}deg) skewY(#{$giroEjeY}deg);
+  -ms-transform: scale($escala) rotate(#{$rotacion}deg) translateX(#{$trasladoEjeX}px) translateY(#{$trasladoEjeY}px) skewX(#{$giroEjeX}deg) skewY(#{$giroEjeY}deg);
+  transform: scale($escala) rotate(#{$rotacion}deg) translateX(#{$trasladoEjeX}px) translateY(#{$trasladoEjeY}px) skewX(#{$giroEjeX}deg) skewY(#{$giroEjeY}deg);
+}
+
+@mixin border-radius($topL, $topR: "false", $bottomR: "false", $bottomL: "false") {
+  @if $topR == "false" and $bottomR == "false" and $bottomL == "false" {
+    -webkit-border-radius: $topL;
+    -moz-border-radius: $topL;
+    -ms-border-radius: $topL;
+    -o-border-radius: $topL;
+    border-radius: $topL;
+  }
+  @else if $topL != "false" and $bottomR == "false" and $bottomL == "false" {
+    -webkit-border-radius: $topL $topL $topR $topR;
+    -moz-border-radius: $topL $topL $topR $topR;
+    -ms-border-radius: $topL $topL $topR $topR;
+    border-radius: $topL $topL $topR $topR;
+  }
+  @else if $topL != "false" and $bottomR != "false" and $bottomL == "false" {
+    -webkit-border-radius: $topL $topR $bottomR $topR;
+    -moz-border-radius: $topL $topR $bottomR $topR;
+    -ms-border-radius: $topL $topR $bottomR $topR;
+    -o-border-radius: $topL $topR $bottomR $topR;
+    border-radius: $topL $topR $bottomR $topR;
+  }
+  @else {
+    -webkit-border-radius: $topL $topR $bottomR $bottomL;
+    -moz-border-radius: $topL $topR $bottomR $bottomL;
+    -ms-border-radius: $topL $topR $bottomR $bottomL;
+    -o-border-radius: $topL $topR $bottomR $bottomL;
+    border-radius: $topL $topR $bottomR $bottomL;
+  }
 }

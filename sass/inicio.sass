@@ -1,0 +1,32 @@
+// Primer Archivo Sass
+
+@import include/variables.scss
+@import include/funciones.scss
+
+body
+  // uso de variables
+  font-size: $tamano-fuente-default
+  font-family: Helvetica
+  background-color: $color-fondo
+
+// Estrutura de cascada en Sass
+.noticia
+  // Llamado de Funciones
+  
+  // tomando parametro por defecto
+  +box-sizing
+  // Colocando un parametro
+  +border-radius(10px)
+  
+  width: 300px
+  background-color: white
+  padding: 10px
+  h3
+    text-transform: uppercase
+    color: $color-texto-default
+    &:hover
+      color: rgba($color-texto-default, 0.5)
+  img
+    width: 100%
+  p
+    color: black
