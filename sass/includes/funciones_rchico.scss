@@ -57,3 +57,27 @@
   -webkit-box-shadow:inset $horizontal, $vertical, $blur, $spread, $color;
   box-shadow: inset $horizontal, $vertical, $blur, $spread, $color;
 }
+
+
+
+/* funcion para generar border radius*/
+
+@mixin border-radius($top_left,$top_right:"false",$bottom_right:"false",$bottom_left:"false"){
+  @if $top_right=="false" &&  $bottom_right:"false",$bottom_left:"false"{
+    -moz-border-radius: $top_left;
+    -webkit-border-radius: $top_left;
+    border-radius: $top_left;  
+  }@else if $top_right<>"false"&&  $bottom_right:"false",$bottom_left:"false"{
+    -moz-border-radius: $top_left $top_left $top_right $top_right;
+    -webkit-border-radius: $top_left $top_left $top_right $top_right;
+    border-radius: $top_left $top_left $top_right $top_right;
+  }@else if $top_right<>"false" && $bottom_right<>"false" && $bottom_left=="false"{
+    -moz-border-radius: $top_left $top_right $bottom_right $top_right;
+    -webkit-border-radius: $top_left $top_right $bottom_right $top_right;
+    border-radius:$top_left $top_right $bottom_right $top_right;
+  }else{
+    -moz-border-radius: $top_left $top_right $bottom_right $bottom_left;
+    -webkit-border-radius:$top_left $top_right $bottom_right $bottom_left;
+    border-radius:$top_left $top_right $bottom_right $bottom_left;
+  }
+}
