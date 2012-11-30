@@ -1,17 +1,17 @@
-SASS Lang
+Sass Lang
 =========
 
-SASS es una Gema Ruby la cual permite pre-procesar CSS incluyendo: funciones (mixin), variables, creacion de cascada de manera dinamica (selectores anidados), herencias y entre otras cosas.
+Sass es una Gema Ruby la cual permite pre-procesar CSS incluyendo: funciones (mixin), variables, creacion de cascada de manera dinamica (selectores anidados), herencias y entre otras cosas.
 
 ## Sintaxis CSS
 
-SASS maneja los mismos selectores y sintaxis por defecto de CSS, pero tambien permite usar sintaxis que no necesita los parentesis ni los ";" al final de cada linea, solo necesita indentacion y salto de lineas. Esta seleccion de sintaxis se hace por medio de la terminacion del archivo fuente SASS, si el archivo tiene como terminacion .scss la sintaxis sera la similar a la de CSS; Si la terminacion es .sass se usara la sintaxis simplificada (tipo python).
+Sass maneja los mismos selectores y sintaxis por defecto de CSS, pero tambien permite usar sintaxis que no necesita los parentesis ni los ";" al final de cada linea, solo necesita indentacion y salto de lineas. Esta seleccion de sintaxis se hace por medio de la terminacion del archivo fuente Sass, si el archivo tiene como terminacion .scss la sintaxis sera la similar a la de CSS; Si la terminacion es .sass se usara la sintaxis simplificada (tipo python).
 
 ## Reglas CSS
 
-Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida salida en CSS.
+Este ejemplo colocaremos una entrada de un archivo Sass y su respectiva salida salida en CSS.
 
-### Sintaxis basica SASS
+### Sintaxis basica Sass
 
 ```sass
   // Selector de id
@@ -71,7 +71,7 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   }
 ```
 
-### Ejemplo en SASS
+### Ejemplo en Sass
 
 ```sass
     $amarillo: #FEFF00; // Amarillo
@@ -142,7 +142,7 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   }
 ```
 
-### Ejemplo en SASS
+### Ejemplo en Sass
 
 ```sass
   $alto:100px;
@@ -159,9 +159,9 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   .caja {
     heigth: $alto;
     width: $ancho;
+    @include transicion(height,500ms,ease);
     &:hover {
       height: $alto * 2;
-      @include (height,500ms,ease)
     }
   }
 ```
@@ -172,18 +172,20 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   .caja{
     height: 100px
     width: 200px
-    }
-
-  .caja:hover{
-    height: 200px;
     -webkit-transition: height 500ms ease;
     -moz-transition: height 500ms ease;
     -ms-transition: height 500ms ease;
     -o-transition: height 500ms ease;
     transition: height 500ms ease;
+    }
+
+  .caja:hover{
+    height: 200px;
   }
 ```
 ## Ciclos y Control de flujo en Sass
+
+Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), menor que (<). Y pueden se varias condiciones usando las operaciones buleanas and, or, not.
 
 ```sass
 
@@ -191,9 +193,9 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
       .propiedad#{$i}: valor;
     }
 
-    @if $variable == parametro {      
+    @if $variable == parametro1 {      
       .propiedad: valor;
-    } @else if $variable == parametro {
+    } @else if $variable == parametro2 {
       .propiedad: $variable;
     } @else {
       .propiedad: valor;

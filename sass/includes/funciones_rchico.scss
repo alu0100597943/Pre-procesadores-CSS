@@ -62,23 +62,45 @@
 
 /* funcion para generar border radius*/
 
+<<<<<<< HEAD
 @mixin border-radius($top_left,$top_right:"false",$bottom_right:"false",$bottom_left:"false"){
   @if $top_right=="false" &&  $bottom_right=="false" && $bottom_left=="false"{
     -moz-border-radius: $top_left;
     -webkit-border-radius: $top_left;
     border-radius: $top_left;  
   }@else if $top_right<>" false"&&  $bottom_right=="false" &&$bottom_left=="false"{
+=======
+@mixin border-radius($top_left,$top_right:"false",$bottom_right:"false",$bottom_left:"false") {
+  
+  @if $top_right=="false" and  $bottom_right=="false" and $bottom_left=="false"{
+
+    -moz-border-radius: $top_left;
+    -webkit-border-radius: $top_left;
+    border-radius: $top_left;  
+
+  }@else if $top_right!="false" and $bottom_right=="false" and $bottom_left=="false"{
+
+>>>>>>> 9841e894cc460ca4488700c3a757a1ea83b52362
     -moz-border-radius: $top_left $top_left $top_right $top_right;
     -webkit-border-radius: $top_left $top_left $top_right $top_right;
     border-radius: $top_left $top_left $top_right $top_right;
-  }@else if $top_right<>"false" && $bottom_right<>"false" && $bottom_left=="false"{
+
+  }@else if $top_right!="false" and $bottom_right!="false" and $bottom_left=="false"{
+
     -moz-border-radius: $top_left $top_right $bottom_right $top_right;
     -webkit-border-radius: $top_left $top_right $bottom_right $top_right;
     border-radius:$top_left $top_right $bottom_right $top_right;
+<<<<<<< HEAD
   }@else{
+=======
+
+  }@else{
+
+>>>>>>> 9841e894cc460ca4488700c3a757a1ea83b52362
     -moz-border-radius: $top_left $top_right $bottom_right $bottom_left;
     -webkit-border-radius:$top_left $top_right $bottom_right $bottom_left;
     border-radius:$top_left $top_right $bottom_right $bottom_left;
+
   }
 }
 
