@@ -63,11 +63,11 @@
 /* funcion para generar border radius*/
 
 @mixin border-radius($top_left,$top_right:"false",$bottom_right:"false",$bottom_left:"false"){
-  @if $top_right=="false" &&  $bottom_right:"false",$bottom_left:"false"{
+  @if $top_right=="false" &&  $bottom_right=="false" && $bottom_left=="false"{
     -moz-border-radius: $top_left;
     -webkit-border-radius: $top_left;
     border-radius: $top_left;  
-  }@else if $top_right<>"false"&&  $bottom_right:"false",$bottom_left:"false"{
+  }@else if $top_right<>" false"&&  $bottom_right=="false" &&$bottom_left=="false"{
     -moz-border-radius: $top_left $top_left $top_right $top_right;
     -webkit-border-radius: $top_left $top_left $top_right $top_right;
     border-radius: $top_left $top_left $top_right $top_right;
@@ -75,9 +75,20 @@
     -moz-border-radius: $top_left $top_right $bottom_right $top_right;
     -webkit-border-radius: $top_left $top_right $bottom_right $top_right;
     border-radius:$top_left $top_right $bottom_right $top_right;
-  }else{
+  }@else{
     -moz-border-radius: $top_left $top_right $bottom_right $bottom_left;
     -webkit-border-radius:$top_left $top_right $bottom_right $bottom_left;
     border-radius:$top_left $top_right $bottom_right $bottom_left;
   }
+}
+
+@mixin box-shadow ($horizontal,$vertical:"false", $blur:"false", $spread:"false" $color:#999, $inset:"false"){
+  @if $vertical<> "false" && $blur=="false" && $spread=="false" && $inset=="false"{
+    -moz-box-shadow: $horizontal $vertical $color;
+    -webkit-box-shadow: $horizontal $vertical $color;
+    box-shadow:$horizontal $vertical $color;
+  }else if $vertical<> "false" && $blur<> "false" && $spread=="false" && $inset=="false"{
+    -moz-box-shadow: $horizontal $vertical $blur $color;
+    -webkit-box-shadow: $horizontal $vertical $blur $color;
+    box-shadow:$horizontal $vertical $blur $color;
 }
