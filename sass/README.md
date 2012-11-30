@@ -159,7 +159,7 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
   .caja {
     heigth: $alto;
     width: $ancho;
-    @include transicion(height,500ms,ease)
+    @include transicion(height,500ms,ease);
     &:hover {
       height: $alto * 2;
     }
