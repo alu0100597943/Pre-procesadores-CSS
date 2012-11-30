@@ -185,15 +185,17 @@ Este ejemplo colocaremos una entrada de un archivo SASS y su respectiva salida s
 ```
 ## Ciclos y Control de flujo en Sass
 
+Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), menor que (<). Y pueden se varias condiciones usando las operaciones buleanas and, or, not.
+
 ```sass
 
     @for $i from $variable numero through $variable {
       .propiedad#{$i}: valor;
     }
 
-    @if $variable == parametro {      
+    @if $variable == parametro1 {      
       .propiedad: valor;
-    } @else if $variable == parametro {
+    } @else if $variable == parametro2 {
       .propiedad: $variable;
     } @else {
       .propiedad: valor;
