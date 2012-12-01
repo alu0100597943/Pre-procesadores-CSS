@@ -1,38 +1,38 @@
-/*Archivo SCSS con  Funciones Border-radius y Box-shadow*/
+//Archivo SCSS con  Funciones Border-radius y Box-shadow
 
 
 
-/* Funciones para generar BORDER-RADIUS  por separado*/
+// Funciones para generar BORDER-RADIUS  por separado
 
-/*Todos los Bordes*/
+//Todos los Bordes
 @mixin border-radius($valor) {
   -moz-border-radius: $valor;
   -webkit-border-radius: $valor;
   border-radius: $valor;
 }
 
-/*Borde Superior Izquierdo*/
+//Borde Superior Izquierdo
 @mixin border-top-left-radius($valor) {
   -moz-border-top-left-radius: $valor;
   -webkit-border-top-left-radius: $valor;
   border-top-left-radius: $valor;
 }
 
-/*Borde Superior Derecho*/
+///orde Superior Derecho
 @mixin border-top-right-radius($valor) {
   -moz-border-top-right-radius: $valor;
   -webkit-border-top-right-radius: $valor;
   border-top-right-radius: $valor;
 }
 
-/*Borde Inferior Izquierdo*/
+//Borde Inferior Izquierdo
 @mixin border-bottom-left-radius($valor) {
   -moz-border-bottom-left-radius: $valor;
   -webkit-border-bottom-left-radius: $valor;
   border-bottom-left-radius: $valor;
 }
 
-/*Borde Inferior Derecho*/
+//Borde Inferior Derecho
 @mixin border-bottom-right-radius($valor) {
   -moz-border-bottom-right-radius: $valor;
   -webkit-border-bottom-right-radius: $valor;
@@ -41,16 +41,16 @@
 
 
 
-/* Funciones para generar  BOX-SHADOW por separado */
+// Funciones para generar  BOX-SHADOW por separado 
 
-/* Externo */
+// Externo 
 @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
   -moz-box-shadow: $horizontal, $vertical, $blur, $spread, $color;
   -webkit-box-shadow: $horizontal, $vertical, $blur, $spread, $color;
   box-shadow:$horizontal, $vertical, $blur, $spread, $color;
 }
 
-/* Interno */
+// Interno */
 @mixin box-shadow-inset($horizontal, $vertical, $blur, $spread, $color) {
   -moz-box-shadow: inset $horizontal, $vertical, $blur, $spread, $color;
   -webkit-box-shadow:inset $horizontal, $vertical, $blur, $spread, $color;
@@ -59,7 +59,7 @@
 
 
 
-/* Funcion para generar BORDER-RADIUS consolidada*/
+// Funcion para generar BORDER-RADIUS consolidada
 
 
 @mixin border-radius($top_left,$top_right:"false",$bottom_right:"false",$bottom_left:"false") {
@@ -84,7 +84,7 @@
 }
 
 
-/*Funcion para generar BOX-SHADOW consolidada*/
+//Funcion para generar BOX-SHADOW consolidada
 
 @mixin box-shadow ($horizontal,$vertical, $blur, $spread, $color, $inset:"false"){
   @if $horizontal!="false" and $vertical!= "false" and $blur!="false" and $spread!="false" and $color!="false" and $inset=="false"{

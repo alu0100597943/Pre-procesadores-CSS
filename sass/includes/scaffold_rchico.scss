@@ -1,0 +1,18 @@
+// Archivo de estilo Base para todo el Site o Aplicacion
+
+
+body{
+	font-family: $fuente-open;
+	font-size: $tam-predeterminado;
+	font-style: none;
+	font-weight: bolder;
+	font-color: $color-fuente-ppal;
+	//
+	border-color: $color-bordes;
+	background-color: $color-fondo;
+	
+
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: $fuente-ubuntu:;
+}

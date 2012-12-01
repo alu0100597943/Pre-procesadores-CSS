@@ -1,0 +1,79 @@
+//Archivo SCSS con  Funciones Border-radius y Box-shadow
+
+// Funciones para generar BORDER-RADIUS  por separado
+
+//Todos los Bordes
+=border-radius($valor)
+  -moz-border-radius: $valor
+  -webkit-border-radius: $valor
+  border-radius: $valor
+
+//Borde Superior Izquierdo
+=border-top-left-radius($valor)
+  -moz-border-top-left-radius: $valor
+  -webkit-border-top-left-radius: $valor
+  border-top-left-radius: $valor
+
+///orde Superior Derecho
+=border-top-right-radius($valor)
+  -moz-border-top-right-radius: $valor
+  -webkit-border-top-right-radius: $valor
+  border-top-right-radius: $valor
+
+//Borde Inferior Izquierdo
+=border-bottom-left-radius($valor)
+  -moz-border-bottom-left-radius: $valor
+  -webkit-border-bottom-left-radius: $valor
+  border-bottom-left-radius: $valor
+
+//Borde Inferior Derecho
+=border-bottom-right-radius($valor)
+  -moz-border-bottom-right-radius: $valor
+  -webkit-border-bottom-right-radius: $valor
+  border-bottom-right-radius: $valor
+
+// Funciones para generar  BOX-SHADOW por separado
+
+// Externo
+=box-shadow($horizontal, $vertical, $blur, $spread, $color)
+  -moz-box-shadow: $horizontal, $vertical, $blur, $spread, $color
+  -webkit-box-shadow: $horizontal, $vertical, $blur, $spread, $color
+  box-shadow: $horizontal, $vertical, $blur, $spread, $color
+
+// Interno 
+=box-shadow-inset($horizontal, $vertical, $blur, $spread, $color)
+  -moz-box-shadow: inset $horizontal, $vertical, $blur, $spread, $color
+  -webkit-box-shadow: inset $horizontal, $vertical, $blur, $spread, $color
+  box-shadow: inset $horizontal, $vertical, $blur, $spread, $color
+
+// Funcion para generar BORDER-RADIUS consolidada
+
+=border-radius($top_left, $top_right: "false", $bottom_right: "false", $bottom_left: "false")
+  @if $top_right == "false" and $bottom_right == "false" and $bottom_left == "false"
+    -moz-border-radius: $top_left
+    -webkit-border-radius: $top_left
+    border-radius: $top_left
+  @else if $top_right != "false" and $bottom_right == "false" and $bottom_left == "false"
+    -moz-border-radius: $top_left $top_left $top_right $top_right
+    -webkit-border-radius: $top_left $top_left $top_right $top_right
+    border-radius: $top_left $top_left $top_right $top_right
+  @else if $top_right != "false" and $bottom_right != "false" and $bottom_left == "false"
+    -moz-border-radius: $top_left $top_right $bottom_right $top_right
+    -webkit-border-radius: $top_left $top_right $bottom_right $top_right
+    border-radius: $top_left $top_right $bottom_right $top_right
+  @else
+    -moz-border-radius: $top_left $top_right $bottom_right $bottom_left
+    -webkit-border-radius: $top_left $top_right $bottom_right $bottom_left
+    border-radius: $top_left $top_right $bottom_right $bottom_left
+
+//Funcion para generar BOX-SHADOW consolidada
+
+=box-shadow($horizontal, $vertical, $blur, $spread, $color, $inset: "false")
+  @if $horizontal != "false" and $vertical != "false" and $blur != "false" and $spread != "false" and $color != "false" and $inset == "false"
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color
+    box-shadow: $horizontal $vertical $blur $spread $color
+  @else if $horizontal != "false" and $vertical != "false" and $blur != "false" and $spread != "false" and $color != "false" and $inset != "false"
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color $inset
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color $inset
+    box-shadow: $horizontal $vertical $blur $spread $color $inset
