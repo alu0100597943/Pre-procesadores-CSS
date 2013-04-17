@@ -277,7 +277,6 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
 ### Ejemplo en Sass
 
 ```sass
-
     $column_width : 60px;
     $column_number: 12;
     $column_gutter: 20px;
@@ -285,15 +284,12 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
     .container {
       width: ($column_width * $column_number) + ($column_gutter * $column_number) - $column_gutter;      
     }
-
 ```
 
 ### Salida en CSS
 
 ```css
-
     .container {
       width: 940px;
        }
-
 ```
