@@ -262,7 +262,6 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
 
       ...
 
-
       form input, form select {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
