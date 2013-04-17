@@ -188,7 +188,6 @@ Este ejemplo colocaremos una entrada de un archivo Sass y su respectiva salida s
 Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), menor que (<). Y pueden se varias condiciones usando las operaciones buleanas and, or, not.
 
 ```sass
-
     @for $i from $variable numero through $variable {
       .propiedad#{$i}: valor;
     }
@@ -200,12 +199,10 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
     } @else {
       .propiedad: valor;
     }
-
 ```
 ### Ejemplo en Sass
 
 ```sass
-
     @for $i from 1 through $column_number {
       .grid#{$i} { @include column-calc($i); }
       .offset#{$i} { @include offset-calc($i);}
@@ -246,7 +243,6 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
 ### Salida en CSS
 
 ```css
-
     .grid1 {
       width: 60px; }
     .offset1 {
@@ -269,7 +265,6 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
         -o-border-radius: 5px;
         border-radius: 5px;
       }
-
 ```
 
 ## Operaciones Matemáticas
