@@ -206,12 +206,70 @@ Las condiciones pueden ser de: igualdad (==), diferencia (!=), mayor que (>), me
 
 ```sass
 
+    @for $i from 1 through $column_number {
+      .grid#{$i} { @include column-calc($i); }
+      .offset#{$i} { @include offset-calc($i);}
+    }
 
+      ...
+
+    @mixin border-radius ($topL , $topR:"false" , $bottomR:"false" , $bottomL:"false") {
+      @if $topR == "false" and $bottomR == "false" and $bottomL =="false" {
+        -webkit-border-radius: $topL;
+        -moz-border-radius: $topL;
+        -ms-border-radius: $topL;
+        -o-border-radius: $topL;
+        border-radius: $topL;
+      } 
+      @else if $topL != "false" and $bottomR == "false" and $bottomL =="false" {
+        -webkit-border-radius: $topL $topL $topR $topR;
+        -moz-border-radius: $topL $topL $topR $topR;
+        -ms-border-radius: $topL $topL $topR $topR;
+         border-radius: $topL $topL $topR $topR;  
+      } 
+      @else if $topL != "false" and $bottomR != "false" and $bottomL =="false" {
+        -webkit-border-radius: $topL  $topR  $bottomR $topR;
+        -moz-border-radius: $topL $topR $bottomR $topR;
+        -ms-border-radius: $topL $topR $bottomR $topR;
+        -o-border-radius: $topL $topR $bottomR $topR;
+        border-radius: $topL $topR $bottomR $topR;  
+      } 
+      @else {
+        -webkit-border-radius: $topL  $topR  $bottomR $bottomL;
+        -moz-border-radius: $topL $topR $bottomR $bottomL;
+        -ms-border-radius: $topL $topR $bottomR $bottomL;
+        -o-border-radius: $topL $topR $bottomR $bottomL;
+        border-radius: $topL $topR $bottomR $bottomL; 
+     }
+    }
 ```
 ### Salida en CSS
 
 ```css
 
+    .grid1 {
+      width: 60px; }
+    .offset1 {
+      margin-left: 80px; }
+    .grid2 {
+      width: 140px; }
+    .offset2 {
+      margin-left: 160px; }
+    .grid3 {
+      width: 220px; }
+    .offset3 {
+      margin-left: 240px; }
+
+      ...
+
+
+      form input, form select {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+      }
 
 ```
 
