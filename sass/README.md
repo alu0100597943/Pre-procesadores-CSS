@@ -141,7 +141,9 @@ Este ejemplo colocaremos una entrada de un archivo Sass y su respectiva salida s
     propiedad: valor;
   }
 ```
-> Para mayor información de las funciones de `SASS` puedes visitar este [link](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html) 
+> Para mayor información de las funciones de `SASS` puedes visitar este [link](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html)
+
+ 
 ### Ejemplo en Sass
 
 ```sass
